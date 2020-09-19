@@ -29,6 +29,13 @@ public class TreeTraversalTest {
           Assert.assertEquals("4 5 2 3 1 ",
                   tree.postOrderTraversal());
 
+          tree.strResult= "";
+
+          Assert.assertEquals("1 2 3 4 5 ",
+                  tree.levelOrderTraversal());
+
+
+
 
       }
 

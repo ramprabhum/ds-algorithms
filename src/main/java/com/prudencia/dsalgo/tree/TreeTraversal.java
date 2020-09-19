@@ -1,6 +1,9 @@
 package com.prudencia.dsalgo.tree;
 
 
+import java.util.LinkedList;
+import java.util.Queue;
+
 public class TreeTraversal {
 
 
@@ -71,6 +74,29 @@ public class TreeTraversal {
         return strResult;
     }
 
+
+    private String levelOrderTraversal(Node node) {
+       if(node == null){
+           return "";
+       }
+        Queue<Node> queue = new LinkedList<Node>();
+        queue.add(node);
+
+        while(!queue.isEmpty()){
+            Node curr = queue.poll();
+            strResult += curr.key+ " ";
+
+            if(curr.left != null) {
+                queue.add(curr.left);
+            }
+            if(curr.right != null) {
+                queue.add(curr.right);
+            }
+        }
+
+        return strResult;
+    }
+
     public String inOrderTraversal() {
         return inOrderTraversal(node);
     }
@@ -83,9 +109,8 @@ public class TreeTraversal {
         return postOrderTraversal(node);
     }
 
-    public Node createNode(int item) {
-        Node node = new Node(item);
-        return node;
+    public String levelOrderTraversal() {
+        return levelOrderTraversal(node);
     }
 
 
