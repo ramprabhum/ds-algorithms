@@ -9,7 +9,7 @@ public class TreeTraversalTest {
 
 
       @Test
-      public void assertBruteForceRotation() {
+      public void assertTreeTraversal() {
           tree.node = new Node(1);
           tree.node.left = new Node(2);
           tree.node.right = new Node(3);
