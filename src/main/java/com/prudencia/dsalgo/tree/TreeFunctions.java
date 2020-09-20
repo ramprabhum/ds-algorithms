@@ -43,15 +43,63 @@ public class TreeFunctions {
     }
 
     int maxLevel = 0;
+    String strResult = "";
+    public String leftViewUtil(Node node, int level) {
+        if (node == null)
+            return "";
+        if(maxLevel < level) {
+            strResult+=node.key+" ";
+            maxLevel = level;
+        }
 
-//    public static void main(String[] args) {
-//        Node node = new Node(1);
-//        node.left = new Node(2);
-//        node.right = new Node(3);
-//        node.left.left = new Node(4);
-//        node.left.left.left = new Node(5);
-//        System.out.println(treeHeight(node));
-//    }
+        leftViewUtil(node.left,level+1);
+        leftViewUtil(node.right,level+1);
+        return  strResult;
+    }
+
+
+    public String rightViewUtil(Node node, int level) {
+        if (node == null)
+            return "";
+        if(maxLevel < level) {
+            strResult+=node.key+" ";
+            maxLevel = level;
+        }
+
+        rightViewUtil(node.right,level+1);
+        rightViewUtil(node.left,level+1);
+        return  strResult;
+    }
+
+
+    public boolean isBalanced(Node root) {
+        if (root == null)
+            return true;
+
+        if (getHeight(root) == -1)
+            return false;
+
+        return true;
+    }
+
+    public int getHeight(Node root) {
+        if (root == null)
+            return 0;
+
+        int left = getHeight(root.left);
+        int right = getHeight(root.right);
+
+        if (left == -1 || right == -1)
+            return -1;
+
+        if (Math.abs(left - right) > 1) {
+            return -1;
+        }
+
+        return Math.max(left, right) + 1;
+
+    }
+
 
 }
 
