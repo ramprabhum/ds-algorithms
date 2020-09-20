@@ -97,6 +97,32 @@ public class TreeTraversal {
         return strResult;
     }
 
+    private String levelOrderTraversal2(Node node) {
+        if(node == null){
+            return "";
+        }
+        Queue<Node> queue = new LinkedList<Node>();
+        queue.add(node);
+
+        while(!queue.isEmpty()){
+            int count = queue.size();
+            for(int i=0;i<count; i++){
+                Node curr = queue.poll();
+                strResult += curr.key+ " ";
+                if(curr.left != null) {
+                    queue.add(curr.left);
+                }
+                if(curr.right != null) {
+                    queue.add(curr.right);
+                }
+            }
+            strResult+="\n";
+
+        }
+
+        return strResult;
+    }
+
     public String inOrderTraversal() {
         return inOrderTraversal(node);
     }
@@ -111,6 +137,11 @@ public class TreeTraversal {
 
     public String levelOrderTraversal() {
         return levelOrderTraversal(node);
+    }
+
+
+    public String levelOrderTraversal2() {
+        return levelOrderTraversal2(node);
     }
 
 
