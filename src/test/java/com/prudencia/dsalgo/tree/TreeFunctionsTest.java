@@ -79,6 +79,7 @@ public class TreeFunctionsTest {
         node.left = new Node(2);
         node.right = new Node(3);
         node.right.left = new Node(6);
+        Assert.assertEquals(treeFunctions.isBalanced(node),true);
         node.right.left.left = new Node(7);
         node.right.left.left.left = new Node(8);
         Assert.assertEquals(treeFunctions.isBalanced(node),false);
