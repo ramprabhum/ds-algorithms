@@ -9,7 +9,6 @@ public class BubbleSort {
             for (int j = 0; j < n-i-1; j++)
                 if (arr[j] > arr[j+1])
                 {
-                    // swap arr[j+1] and arr[i]
                     int temp = arr[j];
                     arr[j] = arr[j+1];
                     arr[j+1] = temp;
@@ -27,10 +26,9 @@ public class BubbleSort {
 
     public static void main(String args[])
     {
-        BubbleSort ob = new BubbleSort();
-        int arr[] = {64, 34, 25, 12, 22, 11, 90};
-        ob.bubbleSort(arr);
-        System.out.println("Sorted array");
-        ob.printArray(arr);
+        BubbleSort bubbleSort = new BubbleSort();
+        int arr[] = {3,6,1,4,9};
+        bubbleSort.bubbleSort(arr);
+        bubbleSort.printArray(arr);
     }
 }
