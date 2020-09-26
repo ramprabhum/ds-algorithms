@@ -3,7 +3,7 @@ package com.prudencia.dsalgo.sort;
 public class SelectionSort {
 
 
-    public int[] bubbleSort(int arr[]) {
+    public int[] seletionSort(int arr[]) {
         int n = arr.length;
 
         for (int i = 0; i < n - 1; i++) {
@@ -32,7 +32,7 @@ public class SelectionSort {
     public static void main(String args[]) {
         SelectionSort selectionSort = new SelectionSort();
         int arr[] = {2,1,8,3,9,5};
-        selectionSort.bubbleSort(arr);
+        selectionSort.seletionSort(arr);
         selectionSort.printArray(arr);
     }
 
