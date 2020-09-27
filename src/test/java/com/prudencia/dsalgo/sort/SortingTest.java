@@ -29,4 +29,17 @@ public class SortingTest {
         mergeSort.mergeSort(arr,0, arr.length-1);
         Assert.assertArrayEquals(arr,new int[]{1,2,3,4,5,6,7});
     }
+
+    @Test
+    public void testQuickSort(){
+        QuickSort quickSort = new QuickSort();
+        int[] arr = new int[]{6,7,1,2,4,3,5};
+        quickSort.quickSortLomuto(arr,0, arr.length-1);
+        Assert.assertArrayEquals(arr,new int[]{1,2,3,4,5,6,7});
+
+        arr = new int[]{6,7,1,2,4,3,5};
+        quickSort.quickSortHoare(arr,0, arr.length-1);
+        Assert.assertArrayEquals(arr,new int[]{1,2,3,4,5,6,7});
+
+    }
 }

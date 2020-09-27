@@ -18,9 +18,9 @@ public class PartitionTest {
     public void assertLomutoPartition() {
         LomutoPartition lomutoPartition = new LomutoPartition();
         int[] arr=new int[]{3,5,6,2,9,4,1,8,7};
-        int[] arrResult= lomutoPartition.lomutoPartition
+        lomutoPartition.lomutoPartition
                 (arr,0,arr.length-1);
-        Assert.assertArrayEquals(arrResult,new int[]{3,5,6,2,4,1,7,8,9});
+        Assert.assertArrayEquals(arr,new int[]{3,5,6,2,4,1,7,8,9});
 
     }
 
