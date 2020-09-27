@@ -22,7 +22,7 @@ public class QuickSort {
 
             // Recursively sort elements before
             // partition and after partition
-            quickSortLomuto(arr, low, pivot-1);
+            quickSortLomuto(arr, low, pivot);
             quickSortLomuto(arr, pivot+1, high);
         }
     }
