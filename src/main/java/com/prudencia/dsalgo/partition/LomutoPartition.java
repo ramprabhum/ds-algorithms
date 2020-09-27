@@ -2,14 +2,14 @@ package com.prudencia.dsalgo.partition;
 
 public class LomutoPartition {
 
-    public int[] lomutoPartition(int arr[], int low, int high){
+    public int lomutoPartition(int arr[], int low, int high){
         int pointer = arr[high];
         int i = low - 1;
         int temp;
 
-        for(int j=0; j< high-1;j++){
+        for(int j=low; j< high;j++){
 
-            if(arr[j] <= pointer) {
+            if(arr[j] < pointer) {
                 i++;
                 temp = arr[i];
                 arr[i] = arr[j];
@@ -22,7 +22,7 @@ public class LomutoPartition {
         arr[i+1] = arr[high];
         arr[high] = temp;
 
-        return arr;
+        return i+1;
     }
 
 
