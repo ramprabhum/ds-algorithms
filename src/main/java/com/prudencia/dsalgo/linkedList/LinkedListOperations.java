@@ -25,7 +25,7 @@ public class LinkedListOperations
         new_node.next = head;
 
         /* 4. Move the head to point to new Node */
-        head = new_node;
+            head = new_node;
     }
 
     /* Inserts a new node after the given prev_node. */
@@ -93,6 +93,28 @@ public class LinkedListOperations
         System.out.println();
     }
 
+
+    public void deleteNode(int new_data){
+        Node tnode = head;
+        Node prev = null;
+
+        if(tnode !=null && tnode.data== new_data) {
+            head = tnode.next;
+            return;
+        }
+
+        while (tnode !=null && tnode.data  != new_data) {
+            prev = tnode;
+            tnode = tnode.next;
+        }
+        // If key was not present in linked list
+        if (tnode == null) return;
+
+        prev.next = tnode.next;
+
+
+    }
+
     /* Driver program to test above functions. Ideally this function
        should be in a separate user class.  It is kept here to keep
        code compact */
@@ -131,6 +153,16 @@ public class LinkedListOperations
         llist.printList();
 
         System.out.println("\nCreated Linked list is: ");
+        llist.printList();
+
+        // Delete 1. So linked list becomes
+        // 7->8->6->3->4->NUllist
+        llist.deleteNode(1);
+        llist.printList();
+
+        // Delete 6. So linked list becomes
+        // 7->8->3->4->NUllist
+        llist.deleteNode(6);
         llist.printList();
     }
 }
