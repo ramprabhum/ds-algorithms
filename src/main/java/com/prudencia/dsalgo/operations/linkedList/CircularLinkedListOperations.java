@@ -116,6 +116,7 @@ public class CircularLinkedListOperations {
 
         Node last = null;
         last =circularLinkedListOperations.addToEmpty(last,2);
+        last= circularLinkedListOperations.addEnd(last,8);
         circularLinkedListOperations.traverse(last);
         last= circularLinkedListOperations.addBegin(last,3);
         circularLinkedListOperations.traverse(last);
