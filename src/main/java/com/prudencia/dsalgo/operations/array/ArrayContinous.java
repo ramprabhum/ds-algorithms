@@ -43,6 +43,7 @@ public class ArrayContinous {
         ArrayContinous t = new ArrayContinous();
         System.out.println(t.searchRange(new int[]{5,6,7,8,8,10},8)[0]);
         System.out.println(t.searchRange(new int[]{5,6,7,8,8,10},8)[1]);
+
     }
 
 }
