@@ -70,6 +70,47 @@ public class Trie {
         return (pCrawl != null && pCrawl.isEndOfWord);
     }
 
+    // Returns true if key presents in trie, else false
+    static void delete(TrieNode trieNode,String key)
+    {
+         deleteNode(key,trieNode,0);
+    }
+
+    // Returns true if key presents in trie, else false
+    static TrieNode deleteNode(String key, TrieNode trieNode, int i)
+    {
+        if(root == null)
+            return null;
+        if (i == key.length()) {
+            if (root.isEndOfWord)
+                root.isEndOfWord = false;
+            if (isEmpty(root)) {
+                root = null;
+            }
+            return root;
+        }
+
+        int index = key.charAt(i) - 'a';
+        root.children[index] =
+                deleteNode(key,root.children[index], i + 1);
+
+
+        if (isEmpty(root) && root.isEndOfWord == false) {
+            root = null;
+        }
+
+        return root;
+    }
+
+    static boolean isEmpty(TrieNode root)
+    {
+        for (int i = 0; i < ALPHABET_SIZE; i++)
+            if (root.children[i] != null)
+                return false;
+        return true;
+
+    }
+
     // Driver
     public static void main(String args[])
     {
@@ -103,6 +144,10 @@ public class Trie {
         if(search("thaw") == true)
             System.out.println("thaw --- " + output[1]);
         else System.out.println("thaw --- " + output[0]);
+
+        delete(root,"the");
+
+        System.out.println(search("the") == true);
 
     }
 }
