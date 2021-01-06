@@ -14,6 +14,7 @@ public class DisjointSetRank {
         if(parent[n] == n) {
             return n;
         } else {
+           // parent[n] = find(parent[n]); path compression
             return find(parent[n]);
         }
     }
