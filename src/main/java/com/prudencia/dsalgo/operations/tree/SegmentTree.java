@@ -7,12 +7,47 @@ public class SegmentTree {
     public static void main(String[] args) {
         int size=4;
         SegmentTree segmentTree = new SegmentTree(size);
-        segmentTree.arr = new int[]{10, 20, 30, 40};
+//        segmentTree.arr = new int[]{10, 20, 30, 40};
+//        System.out.println(segmentTree.constructSegmentTree(0, size - 1, 0));
+//        System.out.println(Arrays.toString(segmentTree.tree));
+//        System.out.println(segmentTree.querySum(0, 2, 0, 3, 0));
+//        segmentTree.updateRecord(0, 3, 0, 5, 1);
+//        System.out.println(Arrays.toString(segmentTree.tree));
+//
+//        size=3;
+//        segmentTree = new SegmentTree(size);
+//        segmentTree.arr = new int[]{1,3,5};
+//        System.out.println(segmentTree.constructSegmentTree(0, size - 1, 0));
+//        System.out.println(Arrays.toString(segmentTree.tree));
+//        System.out.println(segmentTree.querySum(0, 2, 0, 2, 0));
+//        //segmentTree.updateRecord(0, 3, 0, 5, 1);
+//        System.out.println(Arrays.toString(segmentTree.tree));
+//        segmentTree.updateRecord(0, 2, 0, -1, 1);
+//        System.out.println(Arrays.toString(segmentTree.tree))
+//
+//["NumArray","update","update","update","sumRange","update","sumRange","update","sumRange","sumRange","update"]
+
+//[[[7,2,7,2,0]],[4,6],[0,2],[0,9],[4,4],[3,8],[0,4],[4,1],[0,3],[0,4],[0,4]
+//[null,null,null,null,6,null,32,null,26,27,null]
+
+
+        size=5;
+        segmentTree = new SegmentTree(size);
+        segmentTree.arr = new int[]{7,2,7,2,0};
         System.out.println(segmentTree.constructSegmentTree(0, size - 1, 0));
         System.out.println(Arrays.toString(segmentTree.tree));
-        System.out.println(segmentTree.querySum(0, 2, 0, 3, 0));
-        segmentTree.updateRecord(0, 3, 0, 5, 1);
+        segmentTree.updateRecord(0, 4, 0, segmentTree.arr[4]-6, 4);
         System.out.println(Arrays.toString(segmentTree.tree));
+        segmentTree.updateRecord(0, 4, 0, segmentTree.arr[0]-2, 0);
+        System.out.println(Arrays.toString(segmentTree.tree));
+        segmentTree.updateRecord(0, 4, 0, -5, 0);
+        System.out.println(Arrays.toString(segmentTree.tree));
+
+
+
+
+
+
 
 
     }
@@ -52,6 +87,7 @@ public class SegmentTree {
 
     }
 
+
     public void updateRecord(int segStart, int segEnd, int segIndex,int diff, int i){
         if(i < segStart || i > segEnd)
             return;
@@ -68,4 +104,7 @@ public class SegmentTree {
         }
 
     }
+
+
+
 }
