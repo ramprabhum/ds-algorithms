@@ -3,15 +3,18 @@ package com.prudencia.dsalgo.problems.arrays;
 import java.util.ArrayList;
 import java.util.List;
 
-public class ZigZagArray {
+import java.util.*;
+
+class Program {
     public static List<Integer> zigzagTraverse(List<List<Integer>> array) {
 
         int height = array.size()-1;
-        int width = array.get(0).size()-1;
+        int width = array.get(0).size() -1;
         List<Integer> result = new ArrayList<Integer>();
         int row =0, column =0;
         boolean moveDown = true;
         while(!checkInValidPath(row,column,height,width)){
+            result.add(array.get(row).get(column));
             if(moveDown) {
                 if (column == 0 || row == height) {
                     moveDown = false;
