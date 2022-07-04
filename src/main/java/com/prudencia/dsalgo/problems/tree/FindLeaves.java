@@ -46,6 +46,17 @@ private int getHeight(TreeNode root) {
 
 
         System.out.println(findLeaves.findLeaves(tree));
+
+        int left = 12345;
+        boolean even = false;
+        long res = left;
+        if (!even) left = left / 10;
+        while (left > 0) {
+            res = res * 10 + left % 10;
+            left /= 10;
+        }
+
+        System.out.println(res);
     }
 }
 
