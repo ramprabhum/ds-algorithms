@@ -1,6 +1,6 @@
-package com.prudencia.dsalgo.operations.array;
+package com.prudencia.dsalgo.problems.arrays;
 
-public class ArrayContinous {
+public class FindFirstPlaceandLastPlace {
 
         public int[] searchRange(int[] nums, int target) {
             int[] result = {-1,-1};
@@ -40,7 +40,7 @@ public class ArrayContinous {
         }
 
     public static void main(String[] args) {
-        ArrayContinous t = new ArrayContinous();
+        FindFirstPlaceandLastPlace t = new FindFirstPlaceandLastPlace();
         System.out.println(t.searchRange(new int[]{5,6,7,8,8,10},8)[0]);
         System.out.println(t.searchRange(new int[]{5,6,7,8,8,10},8)[1]);
 
